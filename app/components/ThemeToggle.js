@@ -5,14 +5,10 @@ export default function ThemeToggle() {
     const [darkMode, setDarkMode] = useState(false);
     const [toggleChecked, setToggleChecked] = useState(true);
 
-    // useEffect(() => {
-    //     localStorage.setItem('theme', 'dark');
-    // }, [])
-
     useEffect(() => {
         const mode = localStorage.getItem('theme');
         const hasClass = document.documentElement.classList.contains("dark");
-        if (hasClass || mode === 'dark' ) {
+        if (hasClass || mode === 'dark') {
             setDarkMode(true);
             document.documentElement.classList.add('dark');
         } else {
@@ -59,7 +55,7 @@ export default function ThemeToggle() {
                     role="switch"
                     aria-checked={toggleChecked}
                     aria-label={"Switch to toggle Dark theme"}
-               >
+                >
                     <span></span>
                     <i className="cloud"></i>
                     <i className="stars"></i>
