@@ -3,10 +3,8 @@ import { useState, useEffect } from 'react';
 
 export default function ThemeToggle() {
     const [darkMode, setDarkMode] = useState(false);
+    const [toggleChecked, setToggleChecked] = useState(true);
 
-    useEffect(() => {
-        localStorage.setItem('theme', 'dark');
-    }, []);
     useEffect(() => {
         const mode = localStorage.getItem('theme');
         if (mode === 'dark') {
@@ -22,32 +20,45 @@ export default function ThemeToggle() {
         setDarkMode(!darkMode);
         if (!darkMode) {
             localStorage.setItem('theme', 'dark');
+            setToggleChecked(true);
             document.documentElement.classList.add('dark');
         } else {
             localStorage.removeItem('theme');
+            setToggleChecked(false);
             document.documentElement.classList.remove('dark');
         }
     };
+
+    const handleKeyDown = (event) => {
+        console.log(event.key);
+        if (event.key === 'Enter') {
+            toggleDarkMode();
+        }
+    };
+
     return (
-        <div className='fixed bottom-16 right-0 z-10'>
-            <span tabIndex={0} aria-label="Toggle dark theme" className="moon-sun mx-3">
-                <input type="checkbox" name="ct0" id="ct0" />
+        <div className='fixed bottom-12 right-[7%] z-10'>
+            <span onKeyDown={handleKeyDown} tabIndex={0} aria-label="Toggle dark theme" className="moon-sun mx-3">
+                <input type="checkbox"
+                    checked={toggleChecked}
+                    onChange={toggleDarkMode}
+                    name="ctaTheme"
+                    id="ctaTheme"
+                    className="sr-only"
+                    aria-checked={toggleChecked}
+                    aria-label={toggleChecked ? "Switch to light mode" : "Switch to dark mode"} />
                 <label
-                    htmlFor="ct0"
-                    onClick={toggleDarkMode}
-                >
+                    htmlFor="ctaTheme"
+                    tabIndex={0}
+                    role="switch"
+                    aria-checked={toggleChecked}
+                    aria-label={toggleChecked ? "Switch to light mode" : "Switch to dark mode"}
+               >
                     <span></span>
                     <i className="cloud"></i>
                     <i className="stars"></i>
                 </label>
             </span>
-            {/* <button
-                onClick={toggleDarkMode}
-                aria-label="Toggle dark mode"
-                className="dark:text-[#1B062E] text-white bg-[#1B062E] dark:bg-white py-2 text-lg sm:text-base"
-            >
-                {darkMode ? 'Light Mode' : 'Dark Mode'}
-            </button> */}
         </div>
     )
 }

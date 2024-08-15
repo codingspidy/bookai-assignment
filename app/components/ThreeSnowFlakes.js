@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -69,7 +69,7 @@ const ThreeSnowflakes = () => {
     }
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0 pointer-events-none" />;
+  return <canvas ref={canvasRef} className="fixed inset-0 w-full h-full z-0 pointer-events-none" />;
 };
 
 export default ThreeSnowflakes;
