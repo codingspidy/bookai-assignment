@@ -70,8 +70,8 @@ const ThreeSnowflakes = () => {
   }, []);
 
   return (
-    <div role="presentation" aria-hidden="true">
-      <canvas ref={canvasRef} className="fixed dark:bg-[#1B062E] bg-white inset-0 w-full h-full z-[-1] pointer-events-none" />
+    <div role="presentation" aria-hidden={true}>
+      <canvas aria-hidden={true} ref={canvasRef} className="fixed dark:bg-[#1B062E] bg-white inset-0 w-full h-full z-[-1] pointer-events-none" />
     </div>
   );
 };

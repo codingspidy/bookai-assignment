@@ -51,7 +51,7 @@ export default function ThemeToggle() {
                     aria-label={"Switch to toggle Dark theme"} />
                 <label
                     htmlFor="ctaTheme"
-                    tabIndex={0}
+                    tabIndex={-1}
                     role="switch"
                     aria-checked={toggleChecked}
                     aria-label={"Switch to toggle Dark theme"}
