@@ -10,7 +10,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen bg-white dark:bg-[#1B062E] text-[#1B062E] dark:text-white">
+      <main className="min-h-screen text-[#1B062E] dark:text-white">
         <section className="relative flex flex-col min-h-screen items-center justify-center pt-[250px] lg:pt-[100px] pb-16 lg:pb-0 px-5 sm:px-7 lg:px-10">
           <h1 className="text-4xl sm:text-5xl font-bold text-center leading-snug md:leading-relaxed max-w-5xl">
             Explore the Possibilities of <span className="text-[#7C21CC] border-b-4 border-b-[#678AFF] pb-[3px] leading-snug md:leading-relaxed">AI Book Writing</span> with BookAI

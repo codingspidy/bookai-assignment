@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 const ThreeSnowflakes = () => {
@@ -69,7 +69,11 @@ const ThreeSnowflakes = () => {
     }
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 w-full h-full z-0 pointer-events-none" />;
+  return (
+    <div role="presentation" aria-hidden="true">
+      <canvas ref={canvasRef} className="fixed dark:bg-[#1B062E] bg-white inset-0 w-full h-full z-[-1] pointer-events-none" />
+    </div>
+  );
 };
 
 export default ThreeSnowflakes;

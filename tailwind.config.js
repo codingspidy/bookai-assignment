@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-primary": "var(--gradient-1)",
+        "gradient-primary": "linear-gradient(45deg, #726bff, #57b6fe)",
       },
     },
   },
