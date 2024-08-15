@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function Navbar() {
   return (
-    <header className="absolute z-10 top-0 left-0 w-full px-5 sm:px-7 lg:px-10 py-6 sm:py-8" role="banner">
+    <header className="absolute z-10 top-0 left-0 w-full px-6 sm:px-10 lg:px-16 py-6 sm:py-10" role="banner">
       <div className="flex flex-col flex-wrap gap-4 md:flex-row md:items-center md:justify-between w-full max-w-6xl mx-auto ">
         <Link href="/" className="flex-shrink-0 flex items-center" aria-label="Homepage">
           <div className="w-[30px] h-[30px] rounded-full mr-[10px] bg-gradient-primary" aria-hidden="true"></div>
