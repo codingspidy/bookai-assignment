@@ -40,7 +40,7 @@ export default function ThemeToggle() {
 
     return (
         <div className='fixed bottom-12 right-[7%] z-10'>
-            <span onKeyDown={handleKeyDown} tabIndex={-1} aria-label="Switch to toggle Dark theme" className="moon-sun mx-3">
+            <span onKeyDown={handleKeyDown} tabIndex={0} aria-label="Switch to toggle Dark theme" className="moon-sun mx-3">
                 <input type="checkbox"
                     checked={toggleChecked}
                     onChange={toggleDarkMode}
